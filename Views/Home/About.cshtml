@@ -1,0 +1,51 @@
+@{
+    ViewData["Title"] = "Hakkında";
+}
+
+<div class="container" style="padding-top: 5rem;">
+    <div style="background: var(--card-bg); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; align-items: center; text-align: center; border: 1px solid var(--border);">
+        
+        <div style="width: 100%; height: 350px; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1549476464-37392f717541?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center;">
+            <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+                <h1 style="color: white; font-size: 3rem; text-transform: uppercase; letter-spacing: 5px; text-shadow: 0 0 20px rgba(0,0,0,0.8);">Sınırlarını Zorla</h1>
+            </div>
+        </div>
+        
+        <div style="padding: 3rem; max-width: 900px; margin-top: -60px; background: #121212; border-radius: 10px; border: 1px solid var(--primary); position: relative; width: 90%; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <img src="https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Barkın - Baş Antrenör" style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary); margin-bottom: 2rem;">
+            
+            <h2 style="color: white; margin-bottom: 0.5rem; font-size: 2.5rem;">BARKIN</h2>
+            <h4 style="color: var(--primary); margin-bottom: 2rem; letter-spacing: 2px;">BAŞ ANTRENÖR & KURUCU</h4>
+            
+            <p style="font-size: 1.3rem; line-height: 1.8; margin-bottom: 3rem; color: #ddd; font-style: italic;">
+                "Yarın değil, şimdi. Mazeret üretmeyi bırak, aynadaki kişiyle yüzleş. Değişim, konfor alanının bittiği yerde başlar."
+            </p>
+
+            <div style="text-align: left; background: #1e1e1e; padding: 2.5rem; border-radius: 8px; border-left: 5px solid var(--primary);">
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="color: white; margin-bottom: 1rem;">🔥 Neden Buradasın?</h3>
+                    <p style="color: #aaa; font-size: 1.1rem; line-height: 1.6;">
+                        Çünkü sıradan olmaktan sıkıldın. Her gün aynı tempoda yaşamaktan, potansiyelini harcamaktan yoruldun. Burası sadece kas geliştirdiğimiz bir yer değil; burası karakterimizi de çelik gibi sertleştirdiğimiz bir arena.
+                    </p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div>
+                        <strong style="color: var(--primary); font-size: 1.2rem; display: block; margin-bottom: 0.5rem;">🧠 Bilim ve Tutku</strong>
+                        <p style="color: #bbb;">Bilgisayar Mühendisliği disipliniyle analitik yaklaşım, 6 yıllık fitness tutkusuyla birleşti. Rastgele ağırlık kaldırmıyoruz, hedefe giden en optimize yolu inşa ediyoruz.</p>
+                    </div>
+                    <div>
+                        <strong style="color: var(--primary); font-size: 1.2rem; display: block; margin-bottom: 0.5rem;">⚡ Genç ve Aç</strong>
+                        <p style="color: #bbb;">20 yaşındayım ve başarıya açım. Senin de aynı açlıkla saldırmanı istiyorum. Kaybedecek zamanımız yok.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem; text-align: center;">
+                    <hr style="border-color: #333; margin-bottom: 2rem;">
+                    <p style="color: white; font-size: 1.4rem; font-weight: bold; margin-bottom: 1.5rem;">Hazır mısın?</p>
+                    <a asp-controller="Home" asp-action="Packages" class="btn-primary" style="padding: 1rem 3rem; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px;">Değişimi Başlat</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

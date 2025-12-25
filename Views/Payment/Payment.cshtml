@@ -1,0 +1,53 @@
+@model FitnessApp.Models.PaymentViewModel
+
+@{
+    ViewData["Title"] = "Ödeme";
+}
+
+<div class="container" style="padding-top: 5rem; max-width: 600px;">
+    <div style="background: var(--card-bg); padding: 2rem; border-radius: 15px; border: 1px solid var(--border);">
+        <h2 style="text-align: center; color: var(--primary); margin-bottom: 2rem;">Güvenli Ödeme</h2>
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #333;">
+            <div style="font-size: 1.1rem;">Toplam Tutar:</div>
+            <div style="font-size: 1.5rem; color: var(--primary); font-weight: bold;">@Model.PackagePrice TL</div>
+        </div>
+
+        <div asp-validation-summary="ModelOnly" class="text-danger" style="text-align:center; margin-bottom: 1rem; font-weight:bold;"></div>
+
+        <form asp-action="ProcessPayment" method="post">
+            <input type="hidden" asp-for="PackageId" />
+            <input type="hidden" asp-for="PackageName" />
+            <input type="hidden" asp-for="PackagePrice" />
+            <input type="hidden" asp-for="FullName" />
+            <input type="hidden" asp-for="PhoneNumber" />
+            <input type="hidden" asp-for="Email" />
+
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label style="display: block; margin-bottom: 0.5rem;">Kart Üzerindeki İsim</label>
+                <input type="text" class="form-control" value="@Model.FullName" readonly style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #444; background: #333; color: #888;" />
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label style="display: block; margin-bottom: 0.5rem;">Kart Numarası</label>
+                <input asp-for="CardNumber" class="form-control" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #444; background: #222; color: #fff;" />
+                <span asp-validation-for="CardNumber" class="text-danger"></span>
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                <div style="flex: 1;">
+                    <label style="display: block; margin-bottom: 0.5rem;">Son Kul. Tarihi</label>
+                    <input asp-for="ExpiryDate" class="form-control" placeholder="AA/YY" maxlength="5" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #444; background: #222; color: #fff;" />
+                    <span asp-validation-for="ExpiryDate" class="text-danger"></span>
+                </div>
+                <div style="flex: 1;">
+                    <label style="display: block; margin-bottom: 0.5rem;">CVV</label>
+                    <input asp-for="CVV" class="form-control" placeholder="XXX" maxlength="3" type="password" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #444; background: #222; color: #fff;" />
+                    <span asp-validation-for="CVV" class="text-danger"></span>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; font-size: 1.1rem; border-radius: 50px;">Ödemeyi Tamamla 💳</button>
+        </form>
+    </div>
+</div>

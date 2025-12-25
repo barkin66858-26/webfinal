@@ -1,0 +1,40 @@
+@model IEnumerable<FitnessApp.Models.Member>
+
+@{
+    ViewData["Title"] = "Üye Listesi";
+}
+
+<div class="container" style="padding-top: 5rem;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <h1 style="color: var(--primary);">📋 Kayıtlı Üyeler</h1>
+        <a asp-action="Index" class="btn btn-secondary">← Paket Yönetimi</a>
+    </div>
+
+    <div style="overflow-x: auto;">
+        <table class="table" style="background: var(--card-bg); color: white; border-radius: 10px; border-collapse: separate; border-spacing: 0;">
+            <thead>
+                <tr style="background: #333;">
+                    <th style="padding: 1rem;">Ad Soyad</th>
+                    <th style="padding: 1rem;">Telefon</th>
+                    <th style="padding: 1rem;">Email</th>
+                    <th style="padding: 1rem;">Paket</th>
+                    <th style="padding: 1rem;">Ücret</th>
+                    <th style="padding: 1rem;">Kayıt Tarihi</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr style="border-bottom: 1px solid #444;">
+                        <td style="padding: 1rem; border-bottom: 1px solid #333;">@item.FullName</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid #333;">@item.PhoneNumber</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid #333;">@item.Email</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid #333; color: var(--primary);">@item.PackageName</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid #333;">@item.PackagePrice TL</td>
+                        <td style="padding: 1rem; border-bottom: 1px solid #333;">@item.RegistrationDate.ToString("dd.MM.yyyy HH:mm")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

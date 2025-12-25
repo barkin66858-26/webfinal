@@ -1,0 +1,25 @@
+@model IEnumerable<FitnessApp.Models.Package>
+
+@{
+    ViewData["Title"] = "Packages";
+}
+
+<div class="container" style="padding-top: 3rem;">
+    <h1 style="text-align: center; margin-bottom: 2rem;">Üyelik Paketleri</h1>
+    
+    <div class="grid-container">
+        @foreach (var item in Model)
+        {
+            <div class="card">
+                <img src="@item.ImageUrl" class="card-img" alt="@item.Name">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name</h5>
+                    <h6 class="card-price">@item.Price TL / ay</h6>
+                    <p class="card-text">@item.Description</p>
+                    <p class="card-text"><small style="color:var(--secondary)">@item.Features</small></p>
+                    <a asp-controller="Home" asp-action="PackageDetails" asp-route-id="@item.Id" class="btn-primary" style="text-align:center; margin-top: auto;">Detaylar</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - IronForge Fitness</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a class="nav-brand" asp-area="" asp-controller="Home" asp-action="Index">BK <span style="color:#fff">Coaching</span></a>
+            <ul class="nav-links">
+                <li><a asp-controller="Home" asp-action="Index">Ana Sayfa</a></li>
+                <li><a asp-controller="Home" asp-action="Packages">Paketler</a></li>
+                <li><a asp-controller="Home" asp-action="About">Hakkında</a></li>
+                <li><a asp-controller="Home" asp-action="Contact">İletişim</a></li>
+                @if (User.Identity.IsAuthenticated)
+                {
+                   if (User.HasClaim(c => c.Type == "IsAdmin" && c.Value == "True"))
+                   {
+                        <li><a asp-controller="Admin" asp-action="Index" style="color:red">Yönetim Paneli</a></li>
+                   }
+                   <li><a asp-controller="Account" asp-action="Logout">Çıkış (@User.Identity.Name)</a></li>
+                }
+                else
+                {
+                    <li><a asp-controller="Account" asp-action="Login">Giriş Yap</a></li>
+                }
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 BK Coaching. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+    
+    <a href="https://wa.me/905551052684" target="_blank" class="live-support" title="WhatsApp ile İletişime Geç">
+        <span>💬 Canlı Destek</span>
+    </a>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

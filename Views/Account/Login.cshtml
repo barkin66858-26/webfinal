@@ -1,0 +1,31 @@
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container" style="min-height: 70vh; display: flex; align-items: center; justify-content: center;">
+    <div style="background: var(--card-bg); padding: 2rem; border-radius: 10px; border: 1px solid var(--border); width: 100%; max-width: 400px;">
+        <h2 style="text-align: center; color: var(--primary); margin-bottom: 2rem;">Üye Girişi</h2>
+        
+        @if (ViewBag.Error != null)
+        {
+            <div style="background: rgba(255,0,0,0.2); color: #ff5555; padding: 10px; margin-bottom: 1rem; border-radius: 5px; text-align: center;">
+                @ViewBag.Error
+            </div>
+        }
+
+        <form asp-action="Login" method="post">
+            <div class="form-group">
+                <label>Kullanıcı Adı</label>
+                <input type="text" name="username" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Şifre</label>
+                <input type="password" name="password" class="form-control" required>
+            </div>
+            <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">Giriş Yap</button>
+        </form>
+         <div style="text-align: center; margin-top: 1rem;">
+            <a asp-action="Register" style="font-size: 0.9rem;">Kayıt Ol</a>
+        </div>
+    </div>
+</div>

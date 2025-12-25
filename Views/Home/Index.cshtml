@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>POTANSİYELİNİ KEŞFET</h1>
+        <p>Seçkin fitness topluluğuna katılın.</p>
+        <a asp-controller="Home" asp-action="Packages" class="btn-primary">Paketleri İncele</a>
+    </div>
+</div>
+
+<div class="container" style="padding-top: 3rem;">
+    <div style="text-align: center; margin-bottom: 3rem;">
+        <h2 style="font-size: 2.5rem; color: var(--primary); text-transform: uppercase; letter-spacing: 2px;">🏆 BÜYÜK DÖNÜŞÜM YARIŞMASI 🏆</h2>
+        <p style="font-size: 1.2rem; color: var(--text-muted);">Paketini al, değişimi başlat, büyük ödülü kazan! 1 Ayda en büyük değişimi yapan kazanır.</p>
+    </div>
+    
+    <div class="grid-container">
+        <!-- 2nd Place -->
+        <div class="competition-card silver" style="order: 2;">
+            <h3>🥈 2. Olan Kişiye</h3>
+            <div class="prize-amount">5.000 TL</div>
+            <p>Nakit Para Ödülü</p>
+        </div>
+
+        <!-- 1st Place (Center & Bigger) -->
+        <div class="competition-card gold" style="order: 1; transform: scale(1.05);">
+            <h3>🥇 1. Olan Kişiye</h3>
+            <div class="prize-amount">10.000 TL</div>
+            <p>Büyük Ödül + Ücretsiz Üyelik</p>
+        </div>
+
+        <!-- 3rd Place -->
+        <div class="competition-card bronze" style="order: 3;">
+            <h3>🥉 3. Olan Kişiye</h3>
+            <div class="prize-amount">3.000 TL</div>
+            <p>Nakit Para Ödülü</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div style="padding: 4rem 0; text-align: center;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Neden Biz?</h2>
+        <div class="grid-container">
+            <div class="card" style="text-align: center; padding: 2rem;">
+                <h3 style="color:var(--primary)">Uzman Eğitmenler</h3>
+                <p>Sertifikalı koçlarımız her adımda yanınızda.</p>
+            </div>
+            <div class="card" style="text-align: center; padding: 2rem;">
+                <h3 style="color:var(--primary)">Son Teknoloji</h3>
+                <p>Akıllı makineler ve en yeni ekipmanlara erişim.</p>
+            </div>
+            <div class="card" style="text-align: center; padding: 2rem;">
+                <h3 style="color:var(--primary)">7/24 Erişim</h3>
+                <p>Güvenli dijital giriş sistemi ile istediğiniz zaman antrenman yapın.</p>
+            </div>
+        </div>
+    </div>
+</div>
